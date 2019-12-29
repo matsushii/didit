@@ -2,29 +2,30 @@
   .header
   .main
     .container
-      .post
-        .post__top
-          .post__top__user-image
-            image
-          .post__top__user-name
-            nickname
-        .post__main
-          .post__main__text
-            text
-          .post__main__image
-            image
-        .post__bottom
-          .post__bottom__left
-            .post__bottom__left__date
-              2019/12/30
-          .post__bottom__right
-            .post__bottom__right__comment
-              comment
-            .post__bottom__right__reaction
-              good
+      - @posts.each do |post| 
+        .post
+          .post__top
+            .post__top__user-image
+              image
+            .post__top__user-name
+              nickname
+          .post__main
+            .post__main__text
+              = post.content
+            .post__main__image
+              image
+          .post__bottom
+            .post__bottom__left
+              .post__bottom__left__date
+                2019/12/30
+            .post__bottom__right
+              .post__bottom__right__comment
+                comment
+              .post__bottom__right__reaction
+                good
 
     .side-container
       .form
-        = form_with(model: @post, local: true) do |f|
-          = f.text_field :text, class: "form-field", placeholder: "褒めて欲しい内容を入力しよう！！"
+        = form_with(url: posts_path, model: @posts, local: true) do |f|
+          = f.text_field :content, class: "form-field", placeholder: "褒めて欲しい内容を入力しよう！！"
           = f.submit "送信", class: "submit"
