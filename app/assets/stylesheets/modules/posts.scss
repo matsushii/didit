@@ -1,9 +1,55 @@
+// リファクタリング to_do
+// colors.scss,mixinの作成
+
 .wrapper {
   .header {
     height: 100px;
     width: 100vw;
-    background-color: rgb(16, 101, 212);
+    background-color: white;
     position: fixed;
+    display: flex;
+    &__left {
+      margin: 20px 0 20px 10%;
+      &__logo {
+      }
+    }
+    &__right {
+      display: flex;
+      margin: 0 20px 0 auto;
+      &__login {
+        display: flex;
+        align-self: center;
+        height: 40px;
+        width: 100px;
+        margin: 5%;
+        border: 2px solid rgb(16, 101, 212);
+        border-radius: 1em;
+        .login__btn {
+          align-self: center;
+          font-weight: bold;
+          text-decoration: none;
+          color: rgb(16, 101, 212);
+          margin: 0 auto;
+        }
+      }
+      &__regist {
+        display: flex;
+        align-self: center;
+        height: 40px;
+        width: 100px;
+        background-color: rgb(16, 101, 212);
+        margin: 2%;
+        border: 2px solid rgb(16, 101, 212);
+        border-radius: 1em;
+        .regist__btn  {
+          align-self: center;
+          font-weight: bold;
+          text-decoration: none;
+          color: white;
+          margin: 0 auto;
+        }
+      }
+    }
   }
   .main {
     display: flex;
@@ -62,10 +108,10 @@
       }
     }
     .side-container {
-      height: 100vh;
+      height: 35%;
       width: 35%;
       background-color: white;
-      margin:  0 5%;
+      margin: 0 5%;
       .form {
         margin: 2%;
         .form-field {
