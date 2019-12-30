@@ -6,6 +6,8 @@
           = image_tag "didit.png", size: "150x50", class: "logo-image"
     .header__right
       - if user_signed_in?
+        .header__right__user-name
+          = current_user.nickname
         .header__right__logout
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout__btn"
       - else 

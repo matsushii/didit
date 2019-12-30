@@ -15,6 +15,7 @@
     }
     &__right {
       display: flex;
+      width: 250px;
       margin: 0 20px 0 auto;
       &__login {
         display: flex;
@@ -48,6 +49,26 @@
           color: white;
           margin: 0 auto;
         }
+      }
+      &__logout {
+        display: flex;
+        align-self: center;
+        height: 40px;
+        width: 100px;
+        margin: 5%;
+        border: 2px solid rgb(16, 101, 212);
+        border-radius: 1em;
+        .logout__btn {
+          align-self: center;
+          font-weight: bold;
+          text-decoration: none;
+          color: rgb(16, 101, 212);
+          margin: 0 auto;
+        }
+      }
+      &__user-name {
+        align-self: center;
+        width: 30%;
       }
     }
   }
