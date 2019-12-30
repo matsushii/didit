@@ -5,10 +5,14 @@
         = link_to root_path do
           = image_tag "didit.png", size: "150x50", class: "logo-image"
     .header__right
-      .header__right__login
-        = link_to "ログイン", new_user_session_path, class: "login__btn"
-      .header__right__regist
-        = link_to "新規登録", new_user_registration_path, class: "regist__btn"
+      - if user_signed_in?
+        .header__right__logout
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout__btn"
+      - else 
+        .header__right__login
+          = link_to "ログイン", new_user_session_path, class: "login__btn"
+        .header__right__regist
+          = link_to "新規登録", new_user_registration_path, class: "regist__btn"
     -#  to_do: 1．user周り：ログイン．新規登録ボタンの作成ーマイページ，編集ボタンの作成
     -#         2．logo：ロゴの作成とリンクづけ
   .main
