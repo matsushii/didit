@@ -1,0 +1,27 @@
+.wrapper
+  .header
+    .header__logo
+      = link_to root_path do
+        = image_tag "didit.png", size: "150x50", class: "logo-image"
+  .container
+    .contents
+      %h2.contents__header
+        ユーザー登録
+      .contents__main
+        .contents__main__inner
+          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            = render "devise/shared/error_messages", resource: resource
+            .field
+              .label ニックネーム
+              = f.text_field :nickname, class: "form-field", placeholder: "（例）ドイドイ"
+            .field
+              .label メールアドレス
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-field", placeholder: "（例）example@didit.com"
+            .field
+              .label パスワード（8文字以上で入力してください）
+              = f.password_field :password, autocomplete: "new-password", class: "form-field"
+            .field
+              .label パスワード（確認用） 
+              = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-field"
+            .actions
+              = f.submit "登録する", class: "actions__btn"

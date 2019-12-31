@@ -1,31 +1,50 @@
 .wrapper
   .header
+    .header__left
+      .header__left__logo
+        = link_to root_path do
+          = image_tag "didit.png", size: "150x50", class: "logo-image"
+    .header__right
+      - if user_signed_in?
+        .header__right__user-name
+          = current_user.nickname
+        .header__right__logout
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout__btn"
+      - else 
+        .header__right__login
+          = link_to "ログイン", new_user_session_path, class: "login__btn"
+        .header__right__regist
+          = link_to "新規登録", new_user_registration_path, class: "regist__btn"
+    -#  to_do: 1．user周り：ログイン．新規登録ボタンの作成ーマイページ，編集ボタンの作成
+    -#         2．logo：ロゴの作成とリンクづけ
   .main
-    .container
+    .main-container
+      -# postのテンプレート化
       - @posts.each do |post| 
         .post
           .post__top
             .post__top__user-image
-              image
             .post__top__user-name
-              nickname
+              = current_user.nickname
           .post__main
             .post__main__text
               = post.content
             .post__main__image
-              image
           .post__bottom
             .post__bottom__left
               .post__bottom__left__date
-                2019/12/30
+                = post.created_at.strftime("%Y.%m.%d %H:%M:%S")
             .post__bottom__right
+              -# font-awesome使う
               .post__bottom__right__comment
                 comment
               .post__bottom__right__reaction
                 good
 
     .side-container
+      -# 最終的にはJSで表示する形にするか検討中
       .form
         = form_with(url: posts_path, model: @posts, local: true) do |f|
           = f.text_field :content, class: "form-field", placeholder: "褒めて欲しい内容を入力しよう！！"
           = f.submit "送信", class: "submit"
+      

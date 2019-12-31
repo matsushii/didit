@@ -1,0 +1,58 @@
+.wrapper {
+  .header {
+    &__logo {
+      margin: 20px auto;
+      .logo-image {
+
+      }
+    }
+  }
+  .container {
+    height: 100vh;
+    padding: 150px 0 0 0;
+    .contents {
+      width: 50%;
+      background-color: white;
+      margin: 0 auto;
+      &__header {
+        height: 40px;
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+        line-height: 3;
+      }
+      &__main {
+        margin: 5%;
+        &__inner {
+          margin: 5% 15%;
+          .field {
+            .label {
+              margin: 2%;
+              font-weight: bold;
+              font-size: 14px; 
+            }
+            .form-field {
+              height: 50px;
+              width: 100%;
+              border: 1px solid grey;
+              border-radius: 4px;
+              padding-left: 2%;
+            }
+          }
+          .actions {
+            margin: 5%;
+            text-align: center;
+            &__btn {
+              height: 40px;
+              width: 60%;
+              background-color: rgb(16, 101, 212);
+              border-radius: 0.5em;
+              color: white;
+              margin-bottom: 5%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
