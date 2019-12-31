@@ -18,24 +18,22 @@
     -#  to_do: 1．user周り：ログイン．新規登録ボタンの作成ーマイページ，編集ボタンの作成
     -#         2．logo：ロゴの作成とリンクづけ
   .main
-    .container
+    .main-container
       -# postのテンプレート化
       - @posts.each do |post| 
         .post
           .post__top
             .post__top__user-image
-              image
             .post__top__user-name
-              nickname
+              = current_user.nickname
           .post__main
             .post__main__text
               = post.content
             .post__main__image
-              image
           .post__bottom
             .post__bottom__left
               .post__bottom__left__date
-                2019/12/30
+                = post.created_at.strftime("%Y.%m.%d %H:%M:%S")
             .post__bottom__right
               -# font-awesome使う
               .post__bottom__right__comment
