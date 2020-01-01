@@ -71,7 +71,23 @@
       }
       &__user-name {
         align-self: center;
-        width: 30%;
+        width: 20%;
+        font-size: 20px;
+      }
+      &__home {
+        align-self: center;
+        width: 10%;
+        font-size: 30px;
+      }
+      &__cog {
+        align-self: center;
+        width: 10%;
+        font-size: 30px;
+      }
+      &__edit {
+        align-self: center;
+        width: 10%;
+        font-size: 30px;
       }
     }
   }
@@ -79,20 +95,17 @@
     display: flex;
     padding: 150px 2% 0 2%;
     background-color: rgb(231, 231, 231);
-    height: 100vh;
     .main-container {
       height: 100%;
       width: 65%;
       background-color: #f5f5f5;
       margin: 0 2%;
       .post {
-        width: 80%;
         background-color: white;
         margin: 5%;
-        padding: 2%;
+        padding: 3%;
         &__top {
           height: 30%;
-          border-block: border-box;
           border-bottom: 1px solid grey;
           display: flex;
           &__user-image {
@@ -106,10 +119,10 @@
           }
         }
         &__main {
-          background-color: rgb(216, 216, 216);
+          height: 80px;
           margin: 1% 0;
           &__text {
-
+            padding: 3%;
           }
           &__image {
 
@@ -117,16 +130,40 @@
         }
         &__bottom { 
           display: flex;
-          &__left {
-            width: 80%;
-            &__date {
-            }
+          &__date {
+            width: 150px;
+            font-size: 14px;
+            color: lightslategray;
+            padding-left: 1%;
           }
-          &__right {
+          &__reaction {
             display: flex;
-            &__comment {
+            line-height: 14px;
+            margin-left: auto;
+            margin-right: 40px;
+            &__heart {
+              margin-left: 10%;
+              .fa-heart {
+                color: red;
+              }
             }
-            &__reaction {
+            &__sign-language {
+              margin-left: 10%;
+              .fa-sign-language {
+                color: red;
+              }
+            }
+            &__thumbs-up {
+              margin-left: 10%;
+              .fa-thumbs-up {
+                color: red;
+              }
+            }
+            &__comment {
+              margin-left: 10%;
+              .fa-comment-alt {
+                color: black;
+              }
             }
           }
         }

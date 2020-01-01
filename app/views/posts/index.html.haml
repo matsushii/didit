@@ -8,6 +8,15 @@
       - if user_signed_in?
         .header__right__user-name
           = current_user.nickname
+        .header__right__home
+          = link_to root_path do
+            %i.fas.fa-home
+        .header__right__edit
+          = link_to root_path do
+            %i.far.fa-edit
+        .header__right__cog
+          = link_to root_path do
+            %i.fas.fa-cog
         .header__right__logout
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout__btn"
       - else 
@@ -25,21 +34,28 @@
           .post__top
             .post__top__user-image
             .post__top__user-name
-              = current_user.nickname
+              = post.user.nickname
           .post__main
             .post__main__text
               = post.content
             .post__main__image
           .post__bottom
-            .post__bottom__left
-              .post__bottom__left__date
-                = post.created_at.strftime("%Y.%m.%d %H:%M:%S")
-            .post__bottom__right
-              -# font-awesome使う
-              .post__bottom__right__comment
-                comment
-              .post__bottom__right__reaction
-                good
+            .post__bottom__date
+              = post.created_at.strftime("%Y.%m.%d %H:%M:%S")
+            .post__bottom__reaction
+              .post__bottom__reaction__heart
+                = link_to root_path do
+                  %i.fas.fa-heart 1
+              .post__bottom__reaction__sign-language
+                = link_to root_path do
+                  %i.fas.fa-sign-language 2
+              .post__bottom__reaction__thumbs-up
+                = link_to root_path do
+                  %i.far.fa-thumbs-up 1
+              .post__bottom__reaction__comment
+                = link_to root_path do
+                  %i.far.fa-comment-alt 1
+
 
     .side-container
       -# 最終的にはJSで表示する形にするか検討中
