@@ -1,36 +1,32 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
-  .field
-    = f.label :password
-    %i (leave blank if you don't want to change it)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
-      %br/
-      %em
-        = @minimum_password_length
-        characters minimum
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password, autocomplete: "current-password"
-  .actions
-    = f.submit "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
+.wrapper
+  .header
+    .header__logo
+      = link_to root_path do
+        = image_tag "didit.png", size: "150x50", class: "logo-image"
+  .container
+    .contents
+      %h2.contents__header
+        ユーザー情報の更新
+      .contents__main
+        .contents__main__inner
+          = form_with model: @user, url: user_registration_path, local: true do |f|
+            = render "devise/shared/error_messages", resource: resource
+            .field
+              .label メールアドレス
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-field"
+            .field
+              .label 新しいパスワード（8文字以上で入力してください）
+              = f.password_field :password, autocomplete: "new-password", class: "form-field"
+            .field
+              .label パスワード（確認用） 
+              = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-field"
+            .field
+              .label 変更前のパスワード 
+              = f.password_field :current_password, autocomplete: "current-password", class: "form-field"
+            .actions
+              .actions__update
+                = f.submit "更新する", class: "actions__update__btn"
+              .actions__back
+                = link_to "戻る", root_path, class:"actions__back__btn"
+              .actions__delete
+                = link_to "ユーザーの削除",  user_registration_path, {class:"actions__delete__btn", method: :delete}
