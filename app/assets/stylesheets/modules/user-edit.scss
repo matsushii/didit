@@ -1,0 +1,44 @@
+.actions {
+  margin: 5%;
+  text-align: center;
+  &__update {
+    margin-bottom: 5%;
+    &__btn {
+      height: 40px;
+      width: 100%;
+      background-color: rgb(16, 101, 212);
+      border-radius: 0.5em;
+      color: white;
+    }
+  }
+  &__back {
+    height: 40px;
+    width: 60%;
+    background-color: lightslategray;
+    border-radius: 0.5em;
+    color: white;
+    margin: 0 auto;
+    line-height: 40px;
+    margin-bottom: 5%;
+    &__btn {
+      text-decoration: none;
+      color: white;
+      vertical-align: middle;
+    }
+  }
+  &__delete {
+      height: 40px;
+      width: 100%;
+      background-color: red;
+      border-radius: 0.5em;
+      color: white;
+      margin: 0 auto;
+      line-height: 40px;
+      margin-bottom: 5%;
+      &__btn {
+        text-decoration: none;
+        color: white;
+        vertical-align: middle;
+      }
+  }
+}
