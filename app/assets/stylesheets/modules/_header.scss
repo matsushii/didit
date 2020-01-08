@@ -1,0 +1,92 @@
+.header {
+  height: 100px;
+  width: 100vw;
+  background-color: white;
+  position: fixed;
+  display: flex;
+  &__left {
+    margin: 20px 0 20px 10%;
+    &__logo {
+    }
+  }
+  &__right {
+    display: flex;
+    width: 450px;
+    margin: 0 1% 0 auto;
+    &__user-name {
+      text-align: right;
+      font-size: 13px;
+      padding-right: 5%;
+    }
+    &__login {
+      display: flex;
+      align-self: center;
+      height: 40px;
+      width: 100px;
+      margin: 5%;
+      border: 2px solid rgb(16, 101, 212);
+      border-radius: 1em;
+      .login__btn {
+        align-self: center;
+        font-weight: bold;
+        text-decoration: none;
+        color: rgb(16, 101, 212);
+        margin: 0 auto;
+      }
+    }
+    &__regist {
+      display: flex;
+      align-self: center;
+      height: 40px;
+      width: 100px;
+      background-color: rgb(16, 101, 212);
+      margin: 2%;
+      border: 2px solid rgb(16, 101, 212);
+      border-radius: 1em;
+      .regist__btn  {
+        align-self: center;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+        margin: 0 auto;
+      }
+    }
+    &__logout {
+      display: flex;
+      align-self: center;
+      height: 40px;
+      width: 100px;
+      margin: 1%;
+      border: 2px solid rgb(16, 101, 212);
+      border-radius: 1em;
+      .logout__btn {
+        align-self: center;
+        font-weight: bold;
+        text-decoration: none;
+        color: rgb(16, 101, 212);
+        margin: 0 auto;
+      }
+    }
+    &__user-name {
+      align-self: center;
+      width: 150px;
+      font-size: 1  0px;
+    }
+    &__home {
+      align-self: center;
+      width: 10%;
+      font-size: 30px;
+      .fa-home {
+        color: rgb(16, 101, 212);
+      }
+    }
+    &__cog {
+      align-self: center;
+      width: 10%;
+      font-size: 30px;
+      .fa-cog {
+        color: lightslategray;
+      }
+    }
+  }
+}

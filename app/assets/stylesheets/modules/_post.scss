@@ -1,0 +1,62 @@
+.post {
+  background-color: white;
+  margin: 5% 5% 0 5%;
+  padding: 3%;
+  &__top {
+    height: 30%;
+    border-bottom: 1px solid grey;
+    display: flex;
+    &__user-image {
+      height: 50px;
+      width: 50px;
+      background-color: grey;
+    }
+    &__user-name {
+      align-self: center;
+      margin-left: 3%;
+    }
+  }
+  &__main {
+    height: 80px;
+    margin: 1% 0;
+    &__text {
+      padding: 3%;
+    }
+    &__image {
+
+    }
+  }
+  &__bottom { 
+    display: flex;
+    &__date {
+      width: 150px;
+      font-size: 14px;
+      color: lightslategray;
+      padding-left: 1%;
+    }
+    &__reaction {
+      display: flex;
+      line-height: 14px;
+      margin-left: auto;
+      margin-right: 40px;
+      &__heart {
+        margin-left: 10%;
+        .fa-heart {
+          color: red;
+        }
+      }
+      &__thumbs-up {
+        margin-left: 10%;
+        .fa-thumbs-up {
+          color: black;
+        }
+      }
+      &__comment {
+        margin-left: 10%;
+        .fa-comment-alt {
+          color: black;
+        }
+      }
+    }
+  }
+}
