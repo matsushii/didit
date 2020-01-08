@@ -2,7 +2,6 @@
   = render "/layouts/header"
   .main
     .main-container
-      -# postのテンプレート化
       - @posts.each do |post| 
         .post
           .post__top
@@ -26,17 +25,16 @@
               .post__bottom__reaction__comment
                 = link_to root_path do
                   %i.far.fa-comment-alt 1
-        .comment
-          .comment__form
-            = form_with(url: "/posts/#{post.id}/comments", model: @comments, local: true) do |f|
-              = f.text_field :text, class: "comment__form__field", placeholder: "コメントを入力しよう！"
-              = f.submit "送信", class: "comment__form__submit"
-          .comment__all
-            = link_to "＞ コメント一覧へ", post_path(post.id), class: "comment__all--link"
+        .comment-container
+          .comment-container__form
+            = form_with(url: "/posts/#{post.id}/comments", model: @comment, local: true) do |f|
+              = f.text_field :text, class: "comment-container__form__field", placeholder: "コメントを入力しよう！"
+              = f.submit "送信", class: "comment-container__form__submit"
+          .comment-container__link
+            = link_to "＞ コメント一覧へ", post_path(post.id), class: "comment-container__link--blue"
 
 
     .side-container
-      -# 最終的にはJSで表示する形にするか検討中
       .form
         = form_with(url: posts_path, model: @posts, local: true) do |f|
           = f.text_field :content, class: "form-field", placeholder: "褒めて欲しい内容を入力しよう！！"
