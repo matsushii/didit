@@ -43,15 +43,19 @@
               .post__bottom__reaction__heart
                 = link_to root_path do
                   %i.fas.fa-heart 1
-              .post__bottom__reaction__sign-language
-                = link_to root_path do
-                  %i.fas.fa-sign-language 2
               .post__bottom__reaction__thumbs-up
                 = link_to root_path do
                   %i.far.fa-thumbs-up 1
               .post__bottom__reaction__comment
                 = link_to root_path do
                   %i.far.fa-comment-alt 1
+        .comment
+          .comment__form
+            = form_with(url: "/posts/#{post.id}/comments", model: @comments, local: true) do |f|
+              = f.text_field :text, class: "comment__form__field", placeholder: "コメントを入力しよう！"
+              = f.submit "送信", class: "comment__form__submit"
+          .comment__all
+            = link_to "＞ コメント一覧へ", root_path, class: "comment__all--link"
 
 
     .side-container

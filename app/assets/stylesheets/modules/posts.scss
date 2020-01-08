@@ -18,8 +18,9 @@
       width: 450px;
       margin: 0 1% 0 auto;
       &__user-name {
-        width: 200px;
+        text-align: right;
         font-size: 13px;
+        padding-right: 5%;
       }
       &__login {
         display: flex;
@@ -104,7 +105,7 @@
       margin: 0 2%;
       .post {
         background-color: white;
-        margin: 5%;
+        margin: 5% 5% 0 5%;
         padding: 3%;
         &__top {
           height: 30%;
@@ -149,16 +150,10 @@
                 color: red;
               }
             }
-            &__sign-language {
-              margin-left: 10%;
-              .fa-sign-language {
-                color: red;
-              }
-            }
             &__thumbs-up {
               margin-left: 10%;
               .fa-thumbs-up {
-                color: red;
+                color: black;
               }
             }
             &__comment {
@@ -170,6 +165,41 @@
           }
         }
       }
+      .comment {
+        background-color: white;
+        margin: 0 5% 5% 5%;
+        padding: 1% 3%;
+        border-top: 1px solid lightgrey;
+        &__form {
+          height: 40px;
+          margin: 1%;
+          text-align: right;
+          &__field {
+            padding: 1%;
+            height: 30px;
+            width: 35vw;
+            font-size: 12px;
+            border: 2px solid rgb(216, 216, 216);
+            border-radius: 0.5em;  
+          }
+          &__submit {
+            height: 35px;
+            width: 5vw;
+            font-size: 1vw;
+            background-color: rgb(16, 101, 212);
+            color: white;
+          }
+        }
+        &__all {
+          margin-top: 2%;
+          text-align: right;
+          &--link {
+            font-size: 1vw;
+            text-decoration: none;
+            color: rgb(16, 101, 212);
+          }
+        }
+      }    
     }
     .side-container {
       height: 35%;
