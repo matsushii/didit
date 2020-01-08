@@ -1,6 +1,13 @@
 @import "config/reset";
-@import "modules/posts";
+@import "modules/header";
+@import "modules/post";
+@import "modules/comment-form";
+
+@import "modules/post-index";
+@import "modules/post-show";
+
 @import "modules/user-signup";
 @import "modules/user-edit";
+
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
