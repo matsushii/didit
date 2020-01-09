@@ -1,0 +1,40 @@
+.wrapper
+  = render "/layouts/header"
+  .container
+    .post
+      .post__top
+        .post__top__user-image
+        .post__top__user-name
+          = @post.user.nickname
+      .post__main
+        .post__main__text
+          = @post.content
+        .post__main__image
+      .post__bottom
+        .post__bottom__date
+          = @post.created_at.strftime("%Y.%m.%d %H:%M:%S")
+        .post__bottom__reaction
+          .post__bottom__reaction__heart
+            = link_to root_path do
+              %i.fas.fa-heart 1
+          .post__bottom__reaction__thumbs-up
+            = link_to root_path do
+              %i.far.fa-thumbs-up 1
+          .post__bottom__reaction__comment
+            = link_to root_path do
+              %i.far.fa-comment-alt 1
+    .comment-container
+      .comment-container__all
+        - if @comments.present?
+          - @comments.each do |comment|
+            .comment
+              .comment__user-name
+                = comment.user.nickname
+              .comment__text
+                = comment.text
+              .comment__date
+                = comment.created_at.strftime("%Y.%m.%d %H:%M:%S")
+      .comment-container__form
+        = form_with(url: "/posts/#{@post.id}/comments", model: @comment, local: true) do |f|
+          = f.text_field :text, class: "comment-container__form__field", placeholder: "コメントを入力しよう！"
+          = f.submit "送信", class: "comment-container__form__submit"

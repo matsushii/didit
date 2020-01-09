@@ -14,9 +14,13 @@ class PostsController < ApplicationController
     end
   end
 
-  #editはなし、destroyはあり
+  def show
+    @post = Post.find(params[:id])
+    @comments = @post.comments.includes(:user)
+  end
 
   private
+
   def post_params
     params.require(:post).permit(:content).merge(user_id: current_user.id)
   end 
