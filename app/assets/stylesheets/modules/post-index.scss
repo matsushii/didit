@@ -7,7 +7,7 @@
     padding: 150px 2% 0 2%;
     background-color: rgb(231, 231, 231);
     .main-container {
-      height: 100vh;
+      height: calc(100vh - 150px);
       overflow: scroll;  
       width: 65%;
       background-color: #f5f5f5;
