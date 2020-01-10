@@ -13,7 +13,14 @@
     }
     &__user-name {
       align-self: center;
-      margin-left: 3%;
+      margin: 0 auto 0 3%
+    }
+    &__delete {
+      .fa-trash-alt {
+        color: red;
+        font-size: 20px;
+        line-height: 20px;
+      }
     }
   }
   &__main {

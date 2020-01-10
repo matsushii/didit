@@ -8,6 +8,10 @@
             .post__top__user-image
             .post__top__user-name
               = post.user.nickname
+            - if current_user.id == post.user.id 
+              .post__top__delete
+                = link_to post_path(post.id),method: :delete do
+                  %i.fas.fa-trash-alt
           .post__main
             .post__main__text
               = post.content
