@@ -1,8 +1,5 @@
 .wrapper
-  .header
-    .header__logo
-      = link_to root_path do
-        = image_tag "didit.png", size: "150x50", class: "logo-image"
+  = render "/layouts/header"
   .container
     .contents
       %h2.contents__header
@@ -18,10 +15,10 @@
               .label メールアドレス
               = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-field", placeholder: "（例）example@didit.com"
             .field
-              .label パスワード（8文字以上で入力してください）
+              .label パスワード（8文字以上）
               = f.password_field :password, autocomplete: "new-password", class: "form-field"
             .field
               .label パスワード（確認用） 
               = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-field"
             .actions
-              = f.submit "登録する", class: "actions__btn"
+              = f.submit "登録する", class: "actions__btn--blue"

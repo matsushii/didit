@@ -1,8 +1,5 @@
 .wrapper
-  .header
-    .header__logo
-      = link_to root_path do
-        = image_tag "didit.png", size: "150x50", class: "logo-image"
+  = render "/layouts/header"
   .container
     .contents
       %h2.contents__header
@@ -15,7 +12,7 @@
               .label メールアドレス
               = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-field"
             .field
-              .label 新しいパスワード（8文字以上で入力してください）
+              .label 新しいパスワード（8文字以上）
               = f.password_field :password, autocomplete: "new-password", class: "form-field"
             .field
               .label 新しいパスワード（確認用） 
