@@ -1,12 +1,4 @@
 .wrapper {
-  .header {
-    &__logo {
-      margin: 20px auto;
-      .logo-image {
-
-      }
-    }
-  }
   .container {
     height: 100vh;
     padding: 150px 0 0 0;
@@ -43,12 +35,14 @@
             margin: 5%;
             text-align: center;
             &__btn {
-              height: 40px;
-              width: 60%;
-              background-color: rgb(16, 101, 212);
-              border-radius: 0.5em;
-              color: white;
-              margin-bottom: 5%;
+              &--blue {
+                background-color: rgb(16, 101, 212);
+                color: white;
+                height: 40px;
+                width: 60%;
+                border-radius: 0.5em;
+                margin-bottom: 5%;
+              }
             }
           }
         }
