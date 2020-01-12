@@ -16,11 +16,8 @@
         .post__bottom__reaction
           .post__bottom__reaction__like
             = link_to post_likes_path(@post.id), method: :post do
-              %i.fas.fa-heart 
+              %i.far.fa-thumbs-up 
             = @post.likes.count
-          .post__bottom__reaction__thumbs-up
-            = link_to root_path do
-              %i.far.fa-thumbs-up 1
           .post__bottom__reaction__comment
             %i.far.fa-comment-alt
             = @post.comments.count
