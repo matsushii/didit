@@ -14,15 +14,13 @@
         .post__bottom__date
           = @post.created_at.strftime("%Y.%m.%d %H:%M:%S")
         .post__bottom__reaction
-          .post__bottom__reaction__heart
-            = link_to root_path do
-              %i.fas.fa-heart 1
-          .post__bottom__reaction__thumbs-up
-            = link_to root_path do
-              %i.far.fa-thumbs-up 1
+          .post__bottom__reaction__like
+            = link_to post_likes_path(@post.id), method: :post do
+              %i.far.fa-thumbs-up 
+            = @post.likes.count
           .post__bottom__reaction__comment
-            = link_to root_path do
-              %i.far.fa-comment-alt 1
+            %i.far.fa-comment-alt
+            = @post.comments.count
     .comment-container
       .comment-container__all
         - if @comments.present?
