@@ -10,10 +10,10 @@
             = render "devise/shared/error_messages", resource: resource
             .field
               .label メールアドレス
-              = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-field", placeholder: "（例）example@didit.com"
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-field", placeholder: "（例）example@didit.com", value: "didit@hoge.com"
             .field
               .label パスワード（8文字以上）
-              = f.password_field :password, autocomplete: "current-password", class: "form-field"
+              = f.password_field :password, autocomplete: "current-password", class: "form-field", value: "hogehoge"
             - if devise_mapping.rememberable?
               .field
                 = f.check_box :remember_me
