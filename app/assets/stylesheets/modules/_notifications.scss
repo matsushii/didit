@@ -1,0 +1,20 @@
+.notification {
+  position: absolute;
+  top: 0px;
+  height: 40px;
+  width: 100%;
+  z-index: 1;
+  .notice {
+    background-color: rgb(16, 101, 212);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .alert {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+}

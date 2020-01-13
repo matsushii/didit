@@ -2,9 +2,10 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_to root_path
+      redirect_to request.referrer, notice: "コメントを投稿しました"
     else
-      redirect_to root_path
+      flash.now[:alert] = "コメントの投稿に失敗しました"
+      render controller: post, action: index
     end
   end
 
