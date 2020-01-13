@@ -8,11 +8,11 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to root_path
-      #投稿に成功しましたalart表示
+      redirect_to root_path, notice: "投稿が完了しました"
     else
-      redirect_to root_path
-      #to_do: 投稿に失敗しましたalart表示
+      @posts = Post.all.order(created_at: "DESC")
+      flash.now[:alert] = "投稿に失敗しました"
+      render :index
     end
   end
 
@@ -24,9 +24,10 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     if current_user.id == @post.user_id && @post.destroy
-      redirect_to root_path
+      redirect_to request.referrer, notice: "投稿を削除しました"
     else
-      redirect_to root_path      
+      flash.now[:alert] = "削除に失敗しました"
+      render :index
     end
   end
 
