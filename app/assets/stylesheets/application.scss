@@ -5,12 +5,12 @@
 @import "modules/post";
 @import "modules/comment-form";
 
-@import "modules/post-index";
-@import "modules/post-show";
+@import "post/index";
+@import "post/show";
 
-@import "modules/user-signup";
-@import "modules/user-edit";
-@import "modules/user-login";
+@import "user/signup";
+@import "user/edit";
+@import "user/login";
 
 
 @import 'font-awesome-sprockets';
