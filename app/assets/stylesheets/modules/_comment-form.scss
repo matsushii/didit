@@ -5,22 +5,28 @@
   border-top: 1px solid lightgrey;
   &__form {
     height: 40px;
+    width: 100%;
     margin: 1%;
-    text-align: right;
     &__field {
-      padding: 1%;
-      height: 30px;
-      width: 35vw;
-      font-size: 12px;
-      border: 2px solid rgb(216, 216, 216);
-      border-radius: 0.5em;  
+      &--area {
+        resize: none;
+        height: 30px;
+        width: 38vw;
+        padding: 1%;
+        border: 2px solid rgb(216, 216, 216);
+        border-radius: 0.5em;
+      }
     }
     &__submit {
-      height: 35px;
-      width: 5vw;
-      font-size: 1vw;
-      background-color: rgb(16, 101, 212);
-      color: white;
+      float: right;
+      &--btn{
+        height: 40px;
+        width: 5vw;
+        font-size: 14px;
+        background-color: rgb(16, 101, 212);
+        border-radius: 1em;
+        color: white;
+      }
     }
   }
 }
