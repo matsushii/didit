@@ -4,8 +4,8 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to request.referrer, notice: "コメントを投稿しました"
     else
-      flash.now[:alert] = "コメントの投稿に失敗しました"
-      render controller: post, action: index
+      @post = Post.find(params[:post_id])
+      redirect_to post_path(@post.id), alert: "コメントの投稿に失敗しました"
     end
   end
 
