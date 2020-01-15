@@ -30,8 +30,10 @@
         .comment-container
           .comment-container__form
             = form_with(url: "/posts/#{post.id}/comments", model: @comment, local: true) do |f|
-              = f.text_field :text, class: "comment-container__form__field", placeholder: "コメントを入力しよう！"
-              = f.submit "送信", class: "comment-container__form__submit"
+              .comment-container__form__field
+              = f.text_area :text, class: "comment-container__form__field--area", placeholder: "コメントを入力しよう！(50字以内)"
+              .comment-container__form__submit
+                = f.submit "送信", class: "comment-container__form__submit--btn"
           .comment-container__link
             = link_to "＞ コメント一覧へ", post_path(post.id), class: "comment-container__link--blue"
 
@@ -39,6 +41,6 @@
     .side-container
       .form
         = form_with(url: posts_path, model: @posts, local: true) do |f|
-          = f.text_field :content, class: "form-field", placeholder: "褒めて欲しい内容を入力しよう！！"
+          = f.text_area :content, class: "form-field", placeholder: "褒めて欲しい内容を入力しよう！(100字以内)"
           = f.submit "送信", class: "submit"
       

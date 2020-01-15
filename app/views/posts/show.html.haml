@@ -34,5 +34,6 @@
                 = comment.created_at.strftime("%Y.%m.%d %H:%M:%S")
       .comment-container__form
         = form_with(url: "/posts/#{@post.id}/comments", model: @comment, local: true) do |f|
-          = f.text_field :text, class: "comment-container__form__field", placeholder: "コメントを入力しよう！"
-          = f.submit "送信", class: "comment-container__form__submit"
+          = f.text_field :text, class: "comment-container__form__field--area", placeholder: "コメントを入力しよう！(50字以内)"
+          .comment-container__form__submit
+            = f.submit "送信", class: "comment-container__form__submit--btn"
