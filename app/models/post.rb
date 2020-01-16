@@ -5,7 +5,7 @@ class Post < ApplicationRecord
 
   validates :content, length: {in: 1..100}
   
-  def liked_by(current_user)
-    likes.where(user_id: current_user.id).exists?
+  def liked_by(user_id)
+    likes.where(user_id: user_id).exists?
   end
 end
