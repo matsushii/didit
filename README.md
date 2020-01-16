@@ -1,6 +1,6 @@
 # DIDITについて
 ## 1.アプリケーション概要
-[DIDITのリンクはこちらです](https://dididididit.herokuapp.com/)
+[DIDITのリンクはこちらです](https://dididididit.herokuapp.com/)  
 「よくやったね！！」と、他人を褒めるアプリです。
 DIDITは「You did it !（よくやった！）」から作った造語です。  
   
