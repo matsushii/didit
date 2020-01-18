@@ -2,9 +2,11 @@ class LikesController < ApplicationController
   def create
     @like = current_user.likes.new(post_id: params[:post_id])
     if @like.save
-      redirect_to root_path, notice: "投稿にいいねしました"
+      respond_to do |format|
+        format.json
+      end
     else
-      redirect_to root_path
+      redirect_to root_path, alert: "いいねできませんでした"
     end
   end
 
