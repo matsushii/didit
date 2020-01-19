@@ -2,48 +2,7 @@
   = render "/layouts/header"
   .main
     .main-container
-      - @posts.each do |post| 
-        .post
-          .post__top
-            .post__top__user-image
-            .post__top__user-name
-              = post.user.nickname
-            - if current_user.id == post.user.id 
-              .post__top__delete
-                = link_to post_path(post.id), method: :delete do
-                  %i.fas.fa-trash-alt
-          .post__main
-            .post__main__text
-              = post.content
-            .post__main__image
-          .post__bottom
-            .post__bottom__date
-              = post.created_at.strftime("%Y.%m.%d %H:%M:%S")
-            .post__bottom__reaction
-              - if post.liked_by(current_user.id)
-                .post__bottom__reaction__like--blue
-                  = link_to post_like_path(post_id: post.id, id: post.likes[0].id), remote: true, method: :delete, turbolinks: false do
-                    %i.fas.fa-thumbs-up
-                = post.likes.count
-              - else
-                .post__bottom__reaction__like--white
-                  = link_to post_likes_path(post.id), remote: true, method: :post, turbolinks: false do
-                    %i.far.fa-thumbs-up
-                = post.likes.count
-              .post__bottom__reaction__comment
-                %i.far.fa-comment-alt
-                = post.comments.count
-        .comment-container
-          .comment-container__form
-            = form_with(url: "/posts/#{post.id}/comments", model: @comment, local: true) do |f|
-              .comment-container__form__field
-              = f.text_area :text, class: "comment-container__form__field--area", placeholder: "コメントを入力しよう！(50字以内)"
-              .comment-container__form__submit
-                = f.submit "送信", class: "comment-container__form__submit--btn"
-          .comment-container__link
-            = link_to "＞ コメント一覧へ", post_path(post.id), class: "comment-container__link--blue"
-
-
+      = render partial: 'post', collection: @posts
     .side-container
       .form
         = form_with(url: posts_path, model: @posts, local: true) do |f|
