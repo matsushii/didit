@@ -4,6 +4,7 @@ class LikesController < ApplicationController
     if @like.save
       respond_to do |format|
         format.json
+        format.js
       end
     else
       redirect_to root_path, alert: "いいねできませんでした"
