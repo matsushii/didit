@@ -15,7 +15,7 @@
     .post__bottom__date
       = post.created_at.strftime("%Y.%m.%d %H:%M:%S")
     .post__bottom__reaction
-      #post__bottom__reaction__like_post.id
+      .post__bottom__reaction__like
         = render partial: '/likes/like', locals: {post: post}
       .post__bottom__reaction__comment
         = link_to post_path(post.id) do
