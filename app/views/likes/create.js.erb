@@ -1,0 +1,1 @@
+$("#post__bottom__reaction__likable_<%= @post.id %>").html("<%= j(render partial: 'likes/like', locals: {post: @post}) %>");
