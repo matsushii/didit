@@ -5,7 +5,7 @@ class LikesController < ApplicationController
     @like = current_user.likes.new(like_params)
     if @like.save
       respond_to do |format|
-        format.js
+        format.json
       end
     else
       redirect_to root_path, alert: "いいねできませんでした"
@@ -16,7 +16,7 @@ class LikesController < ApplicationController
     @like = current_user.likes.find_by(post_id: params[:post_id])
     if  @like.destroy
       respond_to do |format|
-        format.js
+        format.json
       end
     else
       redirect_to root_path, alert: "いいねを取り消せません"
