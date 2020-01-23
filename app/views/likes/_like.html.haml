@@ -1,0 +1,8 @@
+- if post.liked_by(current_user.id)
+  .post__bottom__reaction__liked
+    = link_to post_like_path(post_id: post.id, id: post.likes[0].id), id:"like_botton", data:{post_id: post.id, like_id: post.likes[0].id}, turbolinks: false, remote: true, method: :delete do
+      %i.fas.fa-thumbs-up
+- else
+  .post__bottom__reaction__likable
+    = link_to post_likes_path(post.id), id:"like_botton",  data: {post_id: post.id}, turbolinks: false,remote: true, method: :post do
+      %i.far.fa-thumbs-up

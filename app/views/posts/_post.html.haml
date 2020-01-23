@@ -1,0 +1,23 @@
+.post
+  .post__top
+    .post__top__user-image
+    .post__top__user-name
+      = post.user.nickname
+    - if current_user.id == post.user.id 
+      .post__top__delete
+        = link_to post_path(post.id), method: :delete do
+          %i.fas.fa-trash-alt
+  .post__main
+    .post__main__text
+      = post.content
+    .post__main__image
+  .post__bottom
+    .post__bottom__date
+      = post.created_at.strftime("%Y.%m.%d %H:%M:%S")
+    .post__bottom__reaction
+      .post__bottom__reaction__like{id: "like_btn_#{post.id}"}
+        = render partial: '/likes/like', locals: {post: post}
+      .post__bottom__reaction__comment
+        = link_to post_path(post.id) do
+          %i.far.fa-comment-alt
+        = post.comments.count
