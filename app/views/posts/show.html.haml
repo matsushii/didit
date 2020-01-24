@@ -14,10 +14,6 @@
         .post__bottom__date
           = @post.created_at.strftime("%Y.%m.%d %H:%M:%S")
         .post__bottom__reaction
-          .post__bottom__reaction__like
-            = link_to post_likes_path(@post.id), method: :post do
-              %i.far.fa-thumbs-up 
-            = @post.likes.count
           .post__bottom__reaction__comment
             %i.far.fa-comment-alt
             = @post.comments.count
