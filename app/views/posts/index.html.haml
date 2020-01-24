@@ -3,9 +3,13 @@
   .main
     .main-container
       = render partial: 'post', collection: @posts
-    .side-container
-      .form
-        = form_with(url: posts_path, model: @posts, local: true) do |f|
-          = f.text_area :content, class: "form-field", placeholder: "褒めて欲しい内容を入力しよう！(100字以内)"
-          = f.submit "送信", class: "submit"
-      
+  = render "/layouts/post_btn"
+#overlay
+  #modal_window
+    .form
+      .window_close
+        %i.fas.fa-times
+      = form_with(url: posts_path, model: @posts, local: true) do |f|
+        = f.text_area :content, class: "form-field", placeholder: "褒めて欲しい内容を入力しよう！(100字以内)"
+        = f.submit "送信", class: "submit"
+    
