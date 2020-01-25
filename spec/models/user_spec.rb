@@ -23,5 +23,16 @@ describe User do
       user.valid?
       expect(user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
     end
+
+    it "ニックネームが10文字以内であれば登録できること" do
+      user = build(:user, nickname: "abcdefghi")
+      expect(user).to be_valid
+    end
+
+    it "ニックネームが11文字以上だと登録できないこと" do
+      user = build(:user, nickname: "aaaaaaaaaaa")
+      user.valid?
+      expect(user.errors[:nickname]).to include("は10文字以内で入力してください")
+    end
   end
 end
