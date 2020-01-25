@@ -1,6 +1,6 @@
 require 'rails_helper'
 describe User do
-  describe '#create' do
+  describe "#create" do
     it "ニックネーム、パスワード、パスワード確認用が全て正常に入力されている時" do
       user = build(:user)
       expect(user).to be_valid
@@ -25,12 +25,12 @@ describe User do
     end
 
     it "ニックネームが10文字以内であれば登録できること" do
-      user = build(:user, nickname: "abcdefghi")
+      user = build(:user, nickname: "ボブ")
       expect(user).to be_valid
     end
 
     it "ニックネームが11文字以上だと登録できないこと" do
-      user = build(:user, nickname: "aaaaaaaaaaa")
+      user = build(:user, nickname: "アレキサンダー・マックイーン")
       user.valid?
       expect(user.errors[:nickname]).to include("は10文字以内で入力してください")
     end
@@ -48,7 +48,7 @@ describe User do
       expect(user).to be_valid
     end
 
-    it "is invalid with a password that has less than 5 characters " do
+    it "パスワードが5文字以下だと登録ができないこと" do
       user = build(:user, password: "12345", password_confirmation: "00000")
       user.valid?
       expect(user.errors[:password]).to include("は6文字以上で入力してください")
