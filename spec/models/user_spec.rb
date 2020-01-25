@@ -34,5 +34,12 @@ describe User do
       user.valid?
       expect(user.errors[:nickname]).to include("は10文字以内で入力してください")
     end
+
+    it "重複するメールアドレスでは登録ができないこと" do
+      user = create(:user)
+      another_user = build(:user, email: user.email)
+      another_user.valid?
+      expect(another_user.errors[:email]).to include("はすでに存在します")
+    end
   end
 end
