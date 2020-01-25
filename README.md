@@ -16,28 +16,29 @@ DIDITは「You did it !（よくやった！）」から作った造語です。
 ## 3.実装機能一覧  
 - postの投稿／削除  
 - postの詳細表示  
+- post_formをmodal_windowで表示
 - userのログイン, ログアウト機能  
 - userの編集機能（e-mail, passwordのみ）  
 - userの削除機能  
 - commentの一覧表示機能  
-- いいね機能  
-- いいねとコメントのcount機能  
-- フラッシュメッセージの表示／fade-out機能  
+- いいね機能（ajax, JS）
+- コメントのcount機能
+- フラッシュメッセージ(JS)
+- 各種テスト
   
 ## 4.使用した言語など  
 - HTML5/CSS3(Haml,Sass)  
 - Ruby (2.5.1)  
 - Ruby on Rails (6.0.1)  
 - jQuery (3.4.1)  
-- ClearDB MySQL(Heroku)
+- ClearDB MySQL(Product/Heroku)
+- MySQL(5.7/development&test)
+- RSpec(UT/IT)
 
 ## 5.今後の実装機能
 - 画像投稿機能（AWS S3）
-- いいねの非同期化
-- コメントに対してのいいね機能
-- 削除要請機能
 - いいね以外のリアクションの追加
-- フォロー機能
+- ジャンル機能
 
 ## 6.DB設計  
 
@@ -52,6 +53,7 @@ DIDITは「You did it !（よくやった！）」から作った造語です。
 #### Association
 - has_many :posts
 - has_many :comments
+- has_many :likes
 
 
 ### postsテーブル
@@ -64,7 +66,7 @@ DIDITは「You did it !（よくやった！）」から作った造語です。
 #### Association
 - belongs_to :user
 - has_many :comments
-- has_many :reactions
+- has_many :likes
 - has_many :images
 
 
@@ -79,15 +81,25 @@ DIDITは「You did it !（よくやった！）」から作った造語です。
 - belongs_to :post
 - belongs_to :user
 
-### reactionsテーブル
+### likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|reaction|integer|null: false|
+|user_id|references|null: false, foreign_key: true|
 |post_id|references|null: false, foreign_key: true|
 
 #### Association
 - belongs_to :post
+- belongs_to :user
 
+### favoriteテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|post_id|references|null: false, foreign_key: true|
+
+#### Association
+- belongs_to :post
+- belongs_to :user
 
 ### imagesテーブル
 |Column|Type|Options|
