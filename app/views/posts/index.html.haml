@@ -11,5 +11,6 @@
         %i.fas.fa-times
       = form_with(url: posts_path, model: @posts, local: true) do |f|
         = f.text_area :content, class: "form-field", placeholder: "褒めて欲しい内容を入力しよう！(100字以内)"
+        = f.file_field :images, multiple: true, class: "file_field"
         = f.submit "送信", class: "submit"
     
