@@ -13,7 +13,7 @@
     .post__main__image
       - if post.images.attached?
         - post.images.each do |image|
-          = image_tag image.variant(resize_to_fill:[300,300]).processed, class: "post__main__image__content"
+          = image_tag image.variant(resize:"400x400").processed, class: "post__main__image__content"
 
 
   .post__bottom
