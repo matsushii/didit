@@ -24,13 +24,14 @@
     }
   }
   &__main {
-    height: 80px;
+    height: 100%;
     margin: 1% 0;
     &__text {
       padding: 3%;
     }
     &__image {
-
+      &__content {
+      }
     }
   }
   &__bottom { 
