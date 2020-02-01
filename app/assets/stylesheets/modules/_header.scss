@@ -22,11 +22,8 @@
       @include outside();
       margin: 5%;
       .login__btn {
-        align-self: center;
-        font-weight: bold;
-        text-decoration: none;
+        @include inside();
         color: $mainBlue;
-        margin: 0 auto;
       }
     }
     &__regist {
@@ -34,28 +31,22 @@
       background-color: $mainBlue;
       margin: 2%;
       .regist__btn  {
-        align-self: center;
-        font-weight: bold;
-        text-decoration: none;
+        @include inside();
         color: $whiteAddGray;
-        margin: 0 auto;
       }
     }
     &__logout {
       @include outside();
       margin: 1%;
       .logout__btn {
-        align-self: center;
-        font-weight: bold;
-        text-decoration: none;
+        @include inside();
         color: $mainBlue;
-        margin: 0 auto;
       }
     }
     &__user-name {
       align-self: center;
       width: 150px;
-      font-size: 1  0px;
+      font-size: 15px;
     }
     &__home {
       align-self: center;
