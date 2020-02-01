@@ -1,0 +1,8 @@
+@mixin outside() {
+  display: flex;
+  align-self: center;
+  height: 40px;
+  width: 100px;
+  border: 2px solid $mainBlue;
+  border-radius: 1em;
+}
