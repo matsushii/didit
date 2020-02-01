@@ -6,3 +6,10 @@
   border: 2px solid $mainBlue;
   border-radius: 1em;
 }
+
+@mixin inside() {
+  align-self: center;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 auto;
+}
