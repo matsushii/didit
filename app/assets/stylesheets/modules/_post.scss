@@ -6,10 +6,11 @@
     height: 30%;
     border-bottom: 1px solid grey;
     display: flex;
-    &__user-image {
+    &__user_image {
       height: 50px;
       width: 50px;
-      background-color: grey;
+      background-color: white;
+      align-self: center;
     }
     &__user-name {
       align-self: center;
