@@ -37,12 +37,17 @@
       }
     }
     &__user_image {
-      align-self: center;
-      width: 15px;
+      height: 100px;
+      width: 100px;
+      line-height: 100px;
+      .user_image {
+        border-radius: 50%;
+        object-fit: cover;
+      }
     }
     &__user-name {
       align-self: center;
-      width: 150px;
+      width: 100px;
       font-size: 15px;
     }
     &__home {
