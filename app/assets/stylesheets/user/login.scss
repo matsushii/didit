@@ -3,7 +3,7 @@
   text-align: center;
   &__login {
     &--btn {
-      background-color: $whiteAddGray;
+      background-color: $headerWhite;
       color: $mainBlue;
       height: 40px;
       width: 100%;
@@ -22,7 +22,7 @@
     &--btn {
       font-weight: bold;
       text-decoration: none;
-      color: $whiteAddGray;
+      color: $headerWhite;
       margin: 0 auto;
       line-height: 40px;
     }
