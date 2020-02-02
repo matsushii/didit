@@ -5,15 +5,15 @@
   width: 100%;
   z-index: 1;
   .notice {
-    background-color: rgb(16, 101, 212);
-    color: white;
+    background-color: $mainBlue;
+    color: $headerWhite;
     font-weight: bold;
     text-align: center;
   }
 
   .alert {
     background-color: red;
-    color: white;
+    color: $headerWhite;
     font-weight: bold;
     text-align: center;
   }

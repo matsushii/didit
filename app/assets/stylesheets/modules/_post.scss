@@ -1,10 +1,10 @@
 .post {
-  background-color: white;
+  background-color: $headerWhite;
   margin: 5% 5% 0 5%;
   padding: 3%;
   &__top {
     height: 30%;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid rgb(231, 231, 231);
     display: flex;
     &__user_image {
       height: 50px;
@@ -40,7 +40,7 @@
     &__date {
       width: 150px;
       font-size: 14px;
-      color: lightslategray;
+      color: $mainGray;
       padding-left: 1%;
     }
     &__reaction {
@@ -49,16 +49,14 @@
       margin-left: auto;
       margin-right: 40px;
       &__like {
-        margin-left: 10%;
-        display: flex;
+        @include postIcon();
         .fa-thumbs-up {
           margin-right: 5px;
-          color: rgb(16, 101, 212);
+          color: $mainBlue;
         }
       }
       &__comment {
-        margin-left: 10%;
-        display: flex;
+        @include postIcon();
         .fa-comment-alt {
           margin-right: 5px;
           color: black;

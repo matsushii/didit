@@ -1,0 +1,10 @@
+@mixin headerIcon() {
+  align-self: center;
+  width: 10%;
+  font-size: 30px;
+}
+
+@mixin postIcon() {
+  margin-left: 10%;
+  display: flex;
+}
