@@ -36,6 +36,10 @@
         color: $mainBlue;
       }
     }
+    &__user_image {
+      align-self: center;
+      width: 15px;
+    }
     &__user-name {
       align-self: center;
       width: 150px;

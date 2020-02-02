@@ -12,6 +12,9 @@
               .label ニックネーム
               = f.text_field :nickname, class: "form-field", placeholder: "（例）ドイドイ"
             .field
+              .label プロフィール画像
+              = f.file_field :avatar, class: "file_field"
+            .field
               .label メールアドレス
               = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-field", placeholder: "（例）example@didit.com"
             .field
