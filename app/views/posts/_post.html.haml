@@ -1,6 +1,8 @@
 .post
   .post__top
     .post__top__user-image
+      - if post.user.avatar.attached?
+        = image_tag post.user.avatar.variant(combine_options:{resize:"60x60",crop:"60x60",gravity: :center}).processed, class: "user_image"
     .post__top__user-name
       = post.user.nickname
     - if current_user.id == post.user.id 
@@ -13,7 +15,7 @@
     .post__main__image
       - if post.images.attached?
         - post.images.each do |image|
-          = image_tag image.variant(resize:"400x400").processed, class: "post__main__image__content"
+          = image_tag image.variant(combine_options:{resize:'400x400',border:'5'}).processed, class: "post__main__image__content"
   .post__bottom
     .post__bottom__date
       = post.created_at.strftime("%Y.%m.%d %H:%M:%S")
