@@ -67,10 +67,14 @@
         margin: 0 auto;
       }
     }
+    &__user_image {
+      align-self: center;
+      width: 15px;
+    }
     &__user-name {
       align-self: center;
       width: 150px;
-      font-size: 1  0px;
+      font-size: 15px;
     }
     &__home {
       align-self: center;
