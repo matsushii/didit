@@ -1,6 +1,10 @@
+@import "config/colors";
 @import "config/reset";
-@import "modules/notifications";
 
+@import "mixin/header_btn";
+@import "mixin/icon";
+
+@import "modules/notifications";
 @import "modules/header";
 @import "modules/post";
 @import "modules/comment-form";

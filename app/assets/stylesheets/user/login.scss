@@ -3,26 +3,26 @@
   text-align: center;
   &__login {
     &--btn {
-      background-color: white;
-      color: rgb(16, 101, 212);
+      background-color: $whiteAddGray;
+      color: $mainBlue;
       height: 40px;
       width: 100%;
       border-radius: 0.5em;
       margin-bottom: 5%;
-      border: 2px solid rgb(16, 101, 212);
+      border: 2px solid $mainBlue;
     }
   }
   &__regist {
     height: 40px;
     width: 100%;
-    background-color: rgb(16, 101, 212);
+    background-color: $mainBlue;
     margin: 2% auto;
-    border: 2px solid rgb(16, 101, 212);
+    border: 2px solid $mainBlue;
     border-radius: 1em;
     &--btn {
       font-weight: bold;
       text-decoration: none;
-      color: white;
+      color: $whiteAddGray;
       margin: 0 auto;
       line-height: 40px;
     }
@@ -31,7 +31,7 @@
     margin: 10px auto;
     &--link {
       text-decoration: none;
-      color: rgb(16, 101, 212);
+      color: $mainBlue;
     }
   }
 }
