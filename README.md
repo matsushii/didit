@@ -17,12 +17,12 @@ DIDITは「You did it !（よくやった！）」から作った造語です。
 - postの投稿／削除  
 - postの詳細表示  
 - post_formをmodal_windowで表示
+- postに画像添付機能
 - userのログイン, ログアウト機能  
-- userの編集機能（e-mail, passwordのみ）  
-- userの削除機能  
-- commentの一覧表示機能  
+- userの編集／削除機能
+- user_imageのアップロード機能
+- commentの一覧表示機能（総数のcountも可能）
 - いいね機能（ajax, JS）
-- コメントのcount機能
 - フラッシュメッセージ(JS)
 - 各種テスト
   
@@ -34,11 +34,11 @@ DIDITは「You did it !（よくやった！）」から作った造語です。
 - ClearDB MySQL(Product/Heroku)
 - MySQL(5.7/development&test)
 - RSpec(UT/IT)
+- AWS(S3) & ActiveStorage
 
 ## 5.今後の実装機能
-- 画像投稿機能（AWS S3）
-- いいね以外のリアクションの追加
 - ジャンル機能
+- お気に入り機能
 
 ## 6.DB設計  
 
@@ -100,12 +100,3 @@ DIDITは「You did it !（よくやった！）」から作った造語です。
 #### Association
 - belongs_to :post
 - belongs_to :user
-
-### imagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|image|varchar|null: false|
-|post_id|references|null: false, foreign_key: true|
-
-#### Association
-- belongs_to :post
