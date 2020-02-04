@@ -5,7 +5,7 @@
       .post__top
         .post__top__user-image
           - if @post.user.avatar.attached?
-            = image_tag @post.user.avatar.variant(combine_options:{resize:"60x60",crop:"60x60",gravity: :center}).processed, class: "user_image"
+            = image_tag @post.user.avatar.variant(combine_options:{resize:"60x60",crop:"60x60",gravity: :center}).processed, class: "user-image"
         .post__top__user-name
           = @post.user.nickname
       .post__main
