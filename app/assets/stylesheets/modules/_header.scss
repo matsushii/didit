@@ -36,11 +36,11 @@
         color: $mainBlue;
       }
     }
-    &__user_image {
+    &__user-image {
       height: 100px;
       width: 100px;
       line-height: 100px;
-      .user_image {
+      .user-image {
         border-radius: 50%;
         object-fit: cover;
       }
