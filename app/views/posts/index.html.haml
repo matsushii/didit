@@ -5,10 +5,10 @@
       = render partial: 'post', collection: @posts
   = render "/layouts/post_btn"
 #overlay
-  #modal_window
+  #modal-window
     .form
       .form__top
-        #window_close
+        #window-close
           %i.fas.fa-times
       = form_with(url: posts_path, model: @posts, local: true) do |f|
         .form__middle

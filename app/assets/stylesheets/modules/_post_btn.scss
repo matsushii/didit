@@ -28,7 +28,7 @@
   display: none;
   z-index: 1;
   overflow: scroll;
-  #modal_window {
+  #modal-window {
     width: 70vw;
     height: 45vw;
     background-color: $headerWhite;
@@ -39,7 +39,7 @@
       margin: 1vw auto;
       &__top {
         margin-bottom: 1vw;
-        #window_close {
+        #window-close {
           height: 3vw;
           .fas.fa-times {
             margin-left: 65vw;
