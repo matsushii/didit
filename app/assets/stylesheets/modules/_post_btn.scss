@@ -47,7 +47,7 @@
         }
       }
       &__middle {
-        .form_field {
+        .form-field {
           resize: none;
           height: 30vw;
           width: 100%;
@@ -64,7 +64,7 @@
             cursor: pointer;
             font-size: 2em;
           }
-          .file_field {
+          .file-field {
             display: none;
           }
         }
